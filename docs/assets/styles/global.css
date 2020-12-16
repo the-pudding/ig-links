@@ -21,9 +21,15 @@
 	--red: #ff533d;
 	--yellow: #e5e338;
 
+	--bg: var(--white);
+	--fg: var(--off-black);
+	--default: var(--gray-light);
+	--primary: var(--red);
+	--secondary: var(--green);
+
 	/* water.css */
 
-	--body-font: var(--serif);
+	--body-font: var(--sans);
 	--background-body: var(--white);
   --background: var(--off-white);
   --background-alt: var(--off-white);
@@ -67,4 +73,8 @@
 #demo svg {
 	width: 1em;
 	vertical-align: middle;
+}
+
+body {
+	background-color: var(--off-white);
 }
