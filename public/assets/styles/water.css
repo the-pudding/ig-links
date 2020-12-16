@@ -25,7 +25,8 @@ html {
   scrollbar-width: thin;
 }
 body {
-	line-height: 1.4;
+  line-height: 1.4;
+  padding: 1rem;
   word-wrap: break-word;
   color: var(--text-main);
 	background: var(--off-white);

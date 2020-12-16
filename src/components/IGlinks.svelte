@@ -6,12 +6,8 @@
     let w;
     let visible = false;
 
-    function handleIn(event) {
-        visible = true
-    }
-
-    function handleOut(event) {
-        visible = false
+    function toggleVisible() {
+        visible = !visible
     }
 </script>
 
@@ -19,10 +15,10 @@
     {#each sheet as row, i}
         <div class='IG-block' id='block_{row.id}'>
             <a href="{row.storyURL}">
-                <div class='img-wrapper' on:mouseover={handleIn} on:mouseleave={handleOut} bind:clientWidth={w} style='height: {w}px'>
+                <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
                     <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
                     {#if visible}
-                        <p transition:fly="{{ y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
+                        <p transition:fly="{{y: w, duration: i == 2 ? 500 : 0 }}" class='IG-hed'>{row.hed}</p>
                     {/if}
                 </div>
             </a>
@@ -53,11 +49,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .IG-block {
         width: calc(33% - 1rem);
-        margin: 0.5rem;
     }
 
     .img-wrapper {
@@ -99,7 +95,7 @@
 
     .link-wrapper p {
         font-size: 0.75em;
-        color: var(--off-black);
+        color: var(--gray-dark);
         margin: 0;
     }
 
@@ -123,6 +119,16 @@
     ul a:hover {
         color: var(--off-black);
         font-weight: 700;
+    }
+
+    @media only screen and (max-width: 720px) {
+        .IG-block {
+            width: calc(50% - 1rem);
+        } 
+        
+        li {
+            font-size: 1em;
+        }
     }
 
 </style>
