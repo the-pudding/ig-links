@@ -1,6 +1,6 @@
 <script>
   import Meta from "./Meta.svelte";
-  import Demo from "./demo/Demo.svelte";
+  import IGlinks from "./IGlinks.svelte";
   import Header from "./pudding/Header.svelte";
   import Footer from "./pudding/Footer.svelte";
 </script>
@@ -9,7 +9,4 @@
 
 <Header />
 
-<!-- demo of all features -->
-<Demo />
-
-<Footer />
+<IGlinks />

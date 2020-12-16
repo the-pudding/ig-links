@@ -34,9 +34,13 @@
     "dev:rollup": "rollup -c -w",
     "dev:livereload": "rollup -c -w --environment LIVERELOAD",
     "gdoc": "node scripts/fetch-google-doc.js",
+    "gsheet": "node scripts/fetch-google-sheet.js",
     "dev": "npm run dev:rollup",
     "predeploy": "npm run build",
     "deploy": "rollup -c rollup.config-ssr.js",
     "start": "sirv public"
+  },
+  "dependencies": {
+    "d3-selection": "^2.0.0"
   }
 }
