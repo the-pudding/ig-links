@@ -18,14 +18,18 @@
 <section id='IG-links-wrapper'>
     {#each sheet as row, i}
         <div class='IG-block' id='block_{row.id}'>
-            <div class='img-wrapper' on:mouseover={handleIn} on:mouseleave={handleOut} bind:clientWidth={w} style='height: {w}px'>
-                <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
-                {#if visible}
-                    <p transition:fly="{{ y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
-                {/if}
-            </div>
+            <a href="{row.storyURL}">
+                <div class='img-wrapper' on:mouseover={handleIn} on:mouseleave={handleOut} bind:clientWidth={w} style='height: {w}px'>
+                    <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                    {#if visible}
+                        <p transition:fly="{{ y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
+                    {/if}
+                </div>
+            </a>
             <div class='link-wrapper'>
-                <p>Related links</p>
+                {#if row.relatedLinkText1}
+                    <p>Related links</p>
+                {/if}
                 <ul>
                     {#if row.relatedLinkText1}
                         <a href="{row.relatedLinkURL1}"><li>{row.relatedLinkText1}</li></a>
@@ -61,6 +65,11 @@
         overflow: hidden;
     }
 
+    .img-wrapper:hover {
+        outline: 5px solid var(--off-black);
+        box-sizing: border-box;
+    }
+
     .IG-img {
         width: 100%;
         height: 100%;
@@ -83,8 +92,15 @@
         transition: 1s ease-in-out;
     }
 
+    .link-wrapper {
+        height: 10rem;
+        margin: 1rem 0;
+    }
+
     .link-wrapper p {
         font-size: 0.75em;
+        color: var(--off-black);
+        margin: 0;
     }
 
     ul {
@@ -92,11 +108,21 @@
         list-style-type: none;
     }
 
+    ul a {
+        color: var(--gray-dark);
+        text-decoration: none;
+    }
+
     li {
         width: 100%;
         border-bottom: 1px solid var(--gray-light);
         padding: 0.5rem 0;
-        font-size: 0.75em;
+        font-size: 1em;
+    }
+
+    ul a:hover {
+        color: var(--off-black);
+        font-weight: 700;
     }
 
 </style>
