@@ -1,33 +1,30 @@
 <script>
-    import Icon from "./helpers/Icon.svelte";
+    import IconCircle from "./helpers/IconCircle.svelte";
 </script>
 
 <section id='IG-details-wrapper'>
    <p class='description'>is a digital publication that explains ideas debated in culture with visual essays.</p>
-   <div class='button-wrapper'>
-       <a href='https://poly-graph.us11.list-manage.com/subscribe/post'><button>Join our newsletter</button></a>
-       <a href='https://www.patreon.com/thepudding'><button>Fund us on Patreon</button></a>
-
-       <div class='social-wrapper'>
-           <p>Find us on social</p>
+   <div class='ctas'>
+        <div class='button-wrapper'>
+            <a href='https://poly-graph.us11.list-manage.com/subscribe/post'><button>Join our newsletter</button></a>
+            <a href='https://www.patreon.com/thepudding'><button>Support us on Patreon</button></a>
+        </div>
+        <div class='social-wrapper'>
+            <p>Find us on social</p>
             <a href="https://www.facebook.com/pudding.viz/">
-                <div class="round-svg">
-                    <Icon name="facebook" fill="var(--off-white)" stroke="none" />
-                </div>
+                <IconCircle name="facebook" fill="var(--gray)" stroke="none" iconType='circle' />
             </a>
             <a href="https://twitter.com/puddingviz">
-                <div class="round-svg">
-                    <Icon name="twitter" fill="var(--off-white)" stroke="none" />
-                </div>
+                <IconCircle name="twitter" fill="var(--gray)" stroke="none" iconType='circle' />
             </a>
-    </div>
+        </div>
    </div>
 </section>
 
 <style>
     #IG-details-wrapper {
         //max-width: 60rem;
-        margin: 0 auto 3rem auto;
+        margin: 0 auto 2rem auto;
     }
 
     .description {
@@ -38,28 +35,36 @@
         font-size: 1.5em;
     }
 
-    .button-wrapper {
-        margin: 2rem auto;
+    .ctas {
+        margin: 1.5rem auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
+    .button-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
     button {
-        background-color: var(--off-black);
+        border: 1px solid var(--gray);
         color: var(--off-white);
-        margin: 0 0.75rem;
+        margin: 0 0.75rem 0 0;
         padding: 1rem;
-        width: 11rem;
-        height: 3rem
+        width: 12.25rem;
+        height: 3.25rem;
+        color: var(--gray-dark)
     }
 
     button:hover {
-        background-color: var(--gray);
+        background-color: var(--off-black);
+        color: var(--off-white);
+        border: 1px solid var(--off-black);
     }
 
     .social-wrapper {
-        margin: 0 0.5rem;
+        margin-left: 0.5rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -68,26 +73,16 @@
     }
     .social-wrapper p {
         margin: 0;
-        padding-right: 0.5rem;
-        color: var(--dark-gray)
-    }
-
-    .round-svg {
-        background-color: var(--off-black);
-        height: 3rem;
-        width: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-        margin-left: 0.5rem;
-    }
-
-    .round-svg:hover {
-        background-color: var(--gray);
+        color: var(--gray-dark)
     }
 
     @media only screen and (max-width: 720px) {
+        .ctas {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .button-wrapper {
             flex-direction: column;
             justify-content: center;
@@ -95,8 +90,14 @@
         } 
         
         button {
-            margin-bottom: 1rem;
+            margin: 0 0 0.5rem 0;
             width: 15rem;
+        }
+
+        .social-wrapper {
+            margin-left: 0;
+            justify-content: center;
+            align-items: center;
         }
     }
    

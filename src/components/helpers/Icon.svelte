@@ -18,11 +18,11 @@
 </script>
 
 {#if icon}
-  <svg {...icon.attrs} style="{`transform: rotate(${rotation}deg);`}">
-    <g>
-      {@html icon.contents}
-    </g>
-  </svg>
+      <svg {...icon.attrs} style="{`transform: rotate(${rotation}deg);`}">
+        <g>
+          {@html icon.contents}
+        </g>
+      </svg>
 {/if}
 
 <style>

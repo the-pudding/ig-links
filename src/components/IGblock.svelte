@@ -112,7 +112,7 @@
         width: 100%;
         border-bottom: 1px solid var(--gray-light);
         padding: 0.5rem 0;
-        font-size: 1em;
+        font-size: 0.9em;
         display: flex;
         flex-direction: row;
         align-items: center;
