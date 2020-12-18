@@ -4,6 +4,7 @@
     import Lazy from 'svelte-lazy';
 
     export let row={};
+    export let imageIndex={};
     let w;
     let visible = false;
 
@@ -16,9 +17,13 @@
     {#if row.storyURL}
         <a href="{row.storyURL}">
             <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
+                {#if imageIndex < 6}
+                    <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                {:else}
                 <Lazy height={w} offset={w} fadeOption=null>
                     <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
                 </Lazy>
+                {/if}
                 {#if visible}
                     <p transition:fly="{{y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
                 {/if}

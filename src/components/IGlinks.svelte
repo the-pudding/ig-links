@@ -15,7 +15,7 @@
 
 <section id='IG-links-wrapper'>
     {#each sheet as row, i}
-        <IGblock row={row}/>
+        <IGblock row={row} imageIndex={i}/>
     {/each}
 </section>
 
