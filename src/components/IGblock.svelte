@@ -23,7 +23,7 @@
         </a>
     {:else}
         <div class='img-wrapper no-link' bind:clientWidth={w} style='height: {w}px'>
-            <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+            <img class='IG-img' src="assets/images/{row.id}.jpg" alt="{row.id} instagram image" loading="lazy">
         </div>
     {/if}
     <div class='link-wrapper'>
