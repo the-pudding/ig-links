@@ -12,37 +12,46 @@
 </script>
 
 <div class='IG-block' id='block_{row.id}'>
-    <a href="{row.storyURL}">
-        <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
+    {#if row.storyURL}
+        <a href="{row.storyURL}">
+            <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
+                <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                {#if visible}
+                    <p transition:fly="{{y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
+                {/if}
+            </div>
+        </a>
+    {:else}
+        <div class='img-wrapper no-link' bind:clientWidth={w} style='height: {w}px'>
             <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
-            {#if visible}
-                <p transition:fly="{{y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
-            {/if}
         </div>
-    </a>
+    {/if}
     <div class='link-wrapper'>
         {#if row.relatedLinkText1}
-            <p>Related links</p>
+            <p>Related</p>
         {/if}
         <ul>
             {#if row.relatedLinkText1}
                 <a href="{row.relatedLinkURL1}">
-                    <li>{row.relatedLinkText1}
-                        <span><Icon name="arrow-right" stroke="var(--gray-light)"/></span>
+                    <li>
+                        <span><Icon name="{row.relatedLinkIcon1}" stroke="var(--gray)"/></span>
+                        {row.relatedLinkText1}
                     </li>
                 </a>
             {/if}
             {#if row.relatedLinkText2}
                 <a href="{row.relatedLinkURL2}">
-                    <li>{row.relatedLinkText2}
-                        <span><Icon name="arrow-right" stroke="var(--gray-light)"/></span>
+                    <li>
+                        <span><Icon name="{row.relatedLinkIcon2}" stroke="var(--gray)"/></span>
+                        {row.relatedLinkText2}
                     </li>
                 </a>
             {/if}
             {#if row.relatedLinkText3}
                 <a href="{row.relatedLinkURL3}">
-                    <li>{row.relatedLinkText3}
-                        <span><Icon name="arrow-right" stroke="var(--gray-light)"/></span>
+                    <li>
+                        <span><Icon name="{row.relatedLinkIcon3}" stroke="var(--gray)"/></span>
+                        {row.relatedLinkText3}
                     </li>
                 </a>
             {/if}
@@ -63,6 +72,11 @@
     .img-wrapper:hover {
         outline: 5px solid var(--off-black);
         box-sizing: border-box;
+    }
+
+    .no-link {
+        pointer-events: none;
+        opacity: 0.25;
     }
 
     .IG-img {
@@ -119,20 +133,18 @@
     }
 
     li span {
-        padding: 0 0 0 0.25rem;
+        padding: 0 0.25rem 0 0;
         position: relative;
         top: 0.125rem;
-        opacity: 0;
     }
 
     ul a:hover  {
         color: var(--off-black);
+        font-weight: 700;
     }
 
-    ul a:hover li span {
-        transition: 0.25s ease-in-out;
-        opacity: 1;
-        animation: bounceRight 1s infinite;
+    ul a:hover svg  {
+        stroke: var(--off-black);
     }
 
     @media only screen and (max-width: 720px) {
@@ -145,10 +157,9 @@
         }
     }
 
-    @keyframes bounceRight {
-        0%       { left:1px; }
-        25%, 75% { left:2px; }
-        50%      { left:3px; }
-        100%     { left:0; }
+    @media only screen and (max-width: 400px) {
+        .IG-hed {
+            font-size: 1.25rem;
+        }
     }
 </style>

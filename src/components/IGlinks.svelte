@@ -2,7 +2,9 @@
     import sheet from "../data/sheet.csv";
     import {selection, select, selectAll} from "d3-selection";
     import { fly } from 'svelte/transition';
-    import IGblock from './IGblock.svelte'
+    import IGblock from './IGblock.svelte';
+
+    console.log(sheet)
 
     let w;
     let visible = false;

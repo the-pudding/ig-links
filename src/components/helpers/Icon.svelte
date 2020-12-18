@@ -27,8 +27,8 @@
 
 <style>
   svg {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.125em;
+    height: 1.125em;
     overflow: visible;
     transform-origin: 50% 50%;
   }

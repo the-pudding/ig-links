@@ -19,12 +19,13 @@
             </a>
         </div>
    </div>
+   <p class="directions">Tap on an image to see the full interactive project</p>
 </section>
 
 <style>
     #IG-details-wrapper {
         //max-width: 60rem;
-        margin: 0 auto 2rem auto;
+        margin: 0 auto 0.5rem auto;
     }
 
     .description {
@@ -76,6 +77,17 @@
         color: var(--gray-dark)
     }
 
+    .directions {
+        max-width: 60rem;
+        margin: 3rem auto 0 auto;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--gray-light);
+        font-size: 0.75rem;
+        color: var(--gray-dark)
+    }
+
     @media only screen and (max-width: 720px) {
         .ctas {
             flex-direction: column;
@@ -100,5 +112,4 @@
             align-items: center;
         }
     }
-   
 </style>
