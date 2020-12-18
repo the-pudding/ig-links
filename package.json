@@ -41,6 +41,7 @@
     "start": "sirv public"
   },
   "dependencies": {
-    "d3-selection": "^2.0.0"
+    "d3-selection": "^2.0.0",
+    "svelte-lazy": "^1.0.7"
   }
 }

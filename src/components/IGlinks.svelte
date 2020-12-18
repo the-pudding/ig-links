@@ -4,8 +4,6 @@
     import { fly } from 'svelte/transition';
     import IGblock from './IGblock.svelte';
 
-    console.log(sheet)
-
     let w;
     let visible = false;
     let hoverIndex = null;

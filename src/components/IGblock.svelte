@@ -1,6 +1,7 @@
 <script>
     import { fly } from 'svelte/transition';
     import Icon from "./helpers/Icon.svelte";
+    import Lazy from 'svelte-lazy';
 
     export let row={};
     let w;
@@ -15,7 +16,9 @@
     {#if row.storyURL}
         <a href="{row.storyURL}">
             <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
-                <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                <Lazy height={w}>
+                    <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                </Lazy>
                 {#if visible}
                     <p transition:fly="{{y: w, duration: 500 }}" class='IG-hed'>{row.hed}</p>
                 {/if}
