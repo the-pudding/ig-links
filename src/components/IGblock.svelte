@@ -16,7 +16,7 @@
     {#if row.storyURL}
         <a href="{row.storyURL}">
             <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
-                <Lazy height={w} fadeOption=null>
+                <Lazy height={w} offset={0} fadeOption=null>
                     <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
                 </Lazy>
                 {#if visible}
