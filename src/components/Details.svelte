@@ -6,7 +6,7 @@
    <p class='description'>is a digital publication that explains ideas debated in culture with visual essays.</p>
    <div class='ctas'>
         <div class='button-wrapper'>
-            <a href='https://poly-graph.us11.list-manage.com/subscribe/post'><button>Join our newsletter</button></a>
+            <a href='https://cool.us11.list-manage.com/subscribe?u=c70d3c0e372cde433143ffeab&id=9af100ac0f'><button>Join our newsletter</button></a>
             <a href='https://www.patreon.com/thepudding'><button>Support us on Patreon</button></a>
         </div>
         <div class='social-wrapper'>
