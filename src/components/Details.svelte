@@ -12,10 +12,10 @@
         <div class='social-wrapper'>
             <p>Find us on social</p>
             <a href="https://www.facebook.com/pudding.viz/">
-                <IconCircle name="facebook" fill="var(--gray)" stroke="none" iconType='circle' />
+                <IconCircle name="facebook" fill="var(--gray)" stroke="none" strokeWidth="0"/>
             </a>
             <a href="https://twitter.com/puddingviz">
-                <IconCircle name="twitter" fill="var(--gray)" stroke="none" iconType='circle' />
+                <IconCircle name="twitter" fill="var(--gray)" stroke="none" strokeWidth="0"/>
             </a>
         </div>
    </div>

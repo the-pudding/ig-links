@@ -17,11 +17,11 @@
     {#if row.storyURL}
         <a href="{row.storyURL}">
             <div class='img-wrapper' on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible} bind:clientWidth={w} style='height: {w}px'>
-                {#if imageIndex < 6}
+                {#if imageIndex < 3}
                     <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
                 {:else}
                 <Lazy height={w} offset={w} fadeOption=null>
-                    <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
+                    <img class='IG-img IG-lazy' src="assets/images/{row.id}.jpg" alt="instagram image">
                 </Lazy>
                 {/if}
                 {#if visible}
@@ -42,7 +42,7 @@
             {#if row.relatedLinkText1}
                 <a href="{row.relatedLinkURL1}">
                     <li>
-                        <span><Icon name="{row.relatedLinkIcon1}" stroke="var(--gray)"/></span>
+                        <span><Icon name="{row.relatedLinkIcon1}" stroke="var(--gray)" strokeWidth="1px" fill="none"/></span>
                         {row.relatedLinkText1}
                     </li>
                 </a>
@@ -50,7 +50,7 @@
             {#if row.relatedLinkText2}
                 <a href="{row.relatedLinkURL2}">
                     <li>
-                        <span><Icon name="{row.relatedLinkIcon2}" stroke="var(--gray)"/></span>
+                        <span><Icon name="{row.relatedLinkIcon2}" stroke="var(--gray)" strokeWidth="1px" fill="none"/></span>
                         {row.relatedLinkText2}
                     </li>
                 </a>
@@ -58,7 +58,7 @@
             {#if row.relatedLinkText3}
                 <a href="{row.relatedLinkURL3}">
                     <li>
-                        <span><Icon name="{row.relatedLinkIcon3}" stroke="var(--gray)"/></span>
+                        <span><Icon name="{row.relatedLinkIcon3}" stroke="var(--gray)" strokeWidth="1px" fill="none"/></span>
                         {row.relatedLinkText3}
                     </li>
                 </a>
@@ -149,10 +149,6 @@
     ul a:hover  {
         color: var(--off-black);
         font-weight: 700;
-    }
-
-    ul a:hover svg  {
-        stroke: var(--off-black);
     }
 
     @media only screen and (max-width: 720px) {
