@@ -20,7 +20,7 @@
                 {#if imageIndex < 3}
                     <img class='IG-img' src="assets/images/{row.id}.jpg" alt="instagram image">
                 {:else}
-                <Lazy height={w} offset={w} fadeOption=null>
+                <Lazy height={w} offset={w} fadeOption=null resetHeightDelay={5}>
                     <img class='IG-img IG-lazy' src="assets/images/{row.id}.jpg" alt="instagram image">
                 </Lazy>
                 {/if}
