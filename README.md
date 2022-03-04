@@ -1,76 +1,167 @@
 # Svelte Starter
 
-This [starter template](https://github.com/the-pudding/svelte-starter) aims for fast and easy web development with HMR, and pre-rendered HTML for optimal static hosting.
+This [starter template](https://github.com/the-pudding/svelte-starter) aims to quickly scaffold a [SvelteKit](https://kit.svelte.dev/) project, designed around data-driven, visual stories at [The Pudding](https://pudding.cool).
 
-_Please note: do not use or reproduce The Pudding logos or fonts without written permission._
+### Notes
+* _Do not use or reproduce The Pudding logos or fonts without written permission._
+* _Prettier Formatting: Disable any text editor Prettier extensions to take advantage of the built-in rules._
 
-#### Features
+### Features
 
-- [HMR](https://github.com/rixo/svelte-hmr) for lightning fast development
 - [Feather Icons](https://github.com/feathericons/feather) for simple/easy svg icons
-- [ArchieML](http://archieml.org/) for micro-CMS powered by Google Docs
-- [LayerCake](https://layercake.graphics/) enabled by default for chart
-- [Water.css](https://github.com/kognise/water.css) for default styling
-- Includes csv, json, and svg imports by default
-- Pre-renders HTML on deploy with content that is hydrated on load
-- Configured to make easy deploment to Github Pages
+- [ArchieML](http://archieml.org/) for micro-CMS powered by Google Docs and Sheets
+- [Style Dictionary](https://amzn.github.io/style-dictionary/) for CSS/JS style parity
+- CSV, JSON, and SVG imports
+- SSR static-hosted builds by default
 
 ## Quickstart
+#### From Scratch
+* Click the green `Use this template` button above.
+* Alternatively: `npx degit the-pudding/svelte-starter my-project`
 
-New school: just click the `Use this template` button above.
+#### Pre-existing Project
+* clone the repo
 
-Old school:
-
-```bash
-npx degit the-pudding/svelte-starter my-project
-```
-
-Then in your local repo:
-
-```bash
-npm install
-npm run build
-```
+#### Installation
+* In your local repo run `pnpm install` or `npm install`
 
 ## Development
-
-To start the dev server:
 
 ```bash
 npm run dev
 ```
 
-Modify content in `src` and `public/assets`.
-
 ## Deploy
-
 ```bash
-npm run deploy
+npm run build
 ```
 
-This generates a directory called `ssr` with the server-side rendered static-hostable app.
+This generates a directory called `build` with the statically rendered app.
 
-If deploying to github pages:
-
+A shortcut for github pages:
 ```bash
 make github
 ```
 
+Deploying to Pudding AWS:
+```bash
+make pudding
+```
+
+### Subdirectories
+If you are hosting the project on a subdirectory, set it in `package.json`.
+
+For example, if you are deploying to `https://domain.com/2021/01/test`:
+
+```json
+"subdirectory": {
+  "path": "/2021/01/test"
+}
+```
+
 ## Style
 
-There are a few stylesheets included by default in `template.html`. Modify `global.css` variables to make changes to Water.css defaults.
+There are a few stylesheets included by default in `src/styles`. Refer to them in `app.css`, the place for applying global styles.
 
-You can use SCSS or another CSS preprocessor by installing the module (eg. `node-sass`) and including the property in the svelte-preprocess in the rollup config files.
+For variable parity in both CSS and JS, modify files in the `properties` folder using the [Style Dictionary](https://amzn.github.io/style-dictionary/) API.
 
-## Google Docs
+Run `npm run style` to regenerate the style dictionary.
 
-- Create a Google Doc
-- Click `Share` button -> advanced -> Change... -> to "Anyone with this link"
-- In the address bar, grab the ID - eg. ...com/document/d/**1IiA5a5iCjbjOYvZVgPcjGzMy5PyfCzpPF-LnQdCdFI0**/edit
-- paste in the ID above into `config.json`
+### Fonts ⚠️
+SvelteKit still hasn't resolved an issue with fonts with subdirectory-hosted projects. The simplest solution right now is to point to an absolute hosted font. If you need it to be local/relative to the project, ask Russell.
 
-Running `npm run gdoc` at any point (even in new tab while server is running) will pull down the latest, and output a file to `src/data/copy.json` (or customize in the config file).
 
-## Notes
+## Google Docs and Sheets
 
-Any @html tags, e.g., `{@html user}` must be the child of a dom element so they can be properly hydrated.
+* Create a Google Doc or Sheet
+* Click `Share` -> `Advanced` -> `Change...` -> `Anyone with this link`
+* In the address bar, grab the ID - eg. "...com/document/d/**1IiA5a5iCjbjOYvZVgPcjGzMy5PyfCzpPF-LnQdCdFI0**/edit"
+* paste in the ID above into `google.config.cjs`, and set the filepath to where you want the file saved
+* If you want to do a Google Sheet, be sure to include the `gid` value in the url as well
+
+Running `npm run gdoc` at any point (even in new tab while server is running) will fetch the latest from all Docs and Sheets.
+
+## Pre-loaded helpers
+
+### Components
+
+Located in `src/lib/components`.
+
+```js
+// Usage
+import Example from "$components/Example.svelte";
+```
+
+* `Footer.svelte`: Pudding recirculation and social links.
+* `Header.svelte`: Pudding logo.
+
+### Helper Components
+
+Located in `src/lib/components/helpers`.
+
+```js
+// Usage
+import Example from "$components/helpers/Example.svelte";
+```
+
+* `ButtonSet.svelte`: Accessible button group inputs
+* `Icon.svelte`: Simple integration with Feather Icons
+* `Range.svelte`: Customizable range slider
+* `Scrolly.svelte`: Scrollytelling
+* `SortTable.svelte`: Sortable semantic table with customizable props
+* `Slider.svelte (and Slider.Slide.svelte)`: A slider widget, especially useful for swipe/slide stories
+* `Tap.svelte`: Edge-of-screen tapping library, designed to integrate with slider
+* `Toggle.svelte`: Accessible toggle inputs
+* `WIP.svelte`: A sticky banner saying this project is a WIP
+
+### Actions
+
+Located in `src/lib/actions`.
+
+```js
+// Usage
+import example from "$actions/action.js";
+```
+
+* `focusTrap.js`: Enable a keyboard focus trap for modals and menus.
+* `inView.js`: detect when an element enters or exits the viewport.
+
+### Stores
+
+These are located in `src/lib/stores`. You can put custom ones in `src/lib/stores/misc.js` or create unique files for more complex ones.
+
+```js
+// Usage
+import example from "$stores/example.js";
+import { example } from "$stores/misc.js";
+```
+
+* `mq`: returns an object of media queries booleans if they are enabled or not. You can modify them in the js file.
+* `viewport`: returns an object `{ width, height }` of the viewport dimensions. It is debounced for performance.
+* `scrollY`: returns an number window vertical scroll position. It is throttled using rAF for performance.
+* `timer`: returns an object { timer, elapsed }. `timer` has 5 methods (start, stop, toggle, set, reset) and `elapsed` is a store that is the number of ms.
+
+### Utils
+
+Located in `src/lib/utils/`.
+
+```js
+// Usage
+import name from "$utils/name.js";
+```
+
+* `checkOverlap.js`: Label overlapping detection. Loops through selection of nodes and adds a class to the ones that are overlapping. Once one is hidden it ignores it.
+* `csvDownload.js`: Converts a flat array of data to CSV content ready to be used as an `href` value for download.
+* `loadImage.js`: Loads an image.
+* `loadPixels.js`: Loads the pixel data of an image via an offscreen canvas.
+* `localStorage.js`: Read and write to local storage.
+* `mapToArray.js`: Convenience function to convert a map to an array.
+* `move.js`: transform translate function shorthand.
+* `transformSvg.js`: Custom transition lets you apply an svg transform property with the in/out svelte transition. Parameters (with defaults):
+* `translate.js`: Convenience function for transform translate css.
+* `urlParams.js`: Get and set url parameters.
+
+## Gotchas
+
+* Any @html tags, e.g., `{@html user}` must be the child of a dom element so they can be properly hydrated.
+* Putting asset paths in CSS doesn't work without some hacks for subdirectory hosted projects

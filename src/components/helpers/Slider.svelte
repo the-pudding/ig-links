@@ -1,7 +1,16 @@
+<!--
+	Add the css snippet below to your global css file to do a
+	full-screen + mobile friendly slider
+	
+	html, body, main {
+	height: 100%;
+	overflow: hidden;
+}
+-->
 <script>
   import { setContext, onMount } from "svelte";
   import { writable } from "svelte/store";
-  import Slide from "./Slider.Slide.svelte";
+  import Slide from "$components/helpers/Slider.Slide.svelte";
 
   export let direction = "horizontal";
   export let duration = "500ms";
@@ -54,8 +63,8 @@
 
   // context
   $: _direction.set(direction);
-  $: _width.set(`${width}px`);
-  $: _height.set(`${height}px`);
+  $: _width.set(width);
+  $: _height.set(height);
   $: context = { direction: _direction, width: _width, height: _height };
   $: setContext("Slider", context);
 
@@ -64,18 +73,21 @@
     count = children;
     observer = new IntersectionObserver(onIntersect, {
       root: null,
-      rootMargin: "-1px",
+      rootMargin: "-1px"
     });
     observer.observe(sliderEl);
+    height = height;
+    width = width;
   });
 </script>
 
 <div
   class="slider {direction}"
-  bind:this="{sliderEl}"
-  bind:clientWidth="{width}"
-  bind:clientHeight="{height}">
-  <div class="translate" bind:this="{translateEl}" style="{customStyle}">
+  bind:this={sliderEl}
+  bind:clientWidth={width}
+  bind:clientHeight={height}
+>
+  <div class="translate" bind:this={translateEl} style={customStyle}>
     <slot />
   </div>
 </div>
@@ -93,6 +105,7 @@
 
   .translate {
     display: flex;
+    flex-wrap: wrap;
     position: relative;
     width: 100%;
     height: 100%;

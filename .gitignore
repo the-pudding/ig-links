@@ -1,5 +1,8 @@
 .DS_Store
 node_modules
-yarn-error.log
-.tmp
-ssr
+.svelte
+.svelte-kit
+build
+functions
+package-lock.json
+pnpm-lock.yaml

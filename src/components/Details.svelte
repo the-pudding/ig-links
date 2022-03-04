@@ -1,39 +1,28 @@
 <script>
-  import IconCircle from "./helpers/IconCircle.svelte";
+  import IconCircle from "$components/helpers/IconCircle.svelte";
 </script>
 
-<section id="IG-details-wrapper">
+<section>
   <p class="description">
-    is a digital publication that explains ideas debated in culture with visual
-    essays.
+    <span class="sr-only">The Pudding</span> is a digital publication that explains ideas debated in
+    culture with visual essays.
   </p>
   <div class="ctas">
     <div class="button-wrapper">
       <a
+        class="btn"
         href="https://cool.us11.list-manage.com/subscribe?u=c70d3c0e372cde433143ffeab&id=9af100ac0f"
-        ><button>Join our newsletter</button></a
+        >Join our newsletter</a
       >
-      <a href="https://www.patreon.com/thepudding"
-        ><button>Support us on Patreon</button></a
-      >
+      <a class="btn" href="https://www.patreon.com/thepudding">Support us on Patreon</a>
     </div>
     <div class="social-wrapper">
       <p>Find us on social</p>
       <a href="https://www.facebook.com/pudding.viz/">
-        <IconCircle
-          name="facebook"
-          fill="var(--gray)"
-          stroke="none"
-          strokeWidth="0"
-        />
+        <IconCircle name="facebook" fill="var(--gray)" stroke="none" strokeWidth="0" />
       </a>
       <a href="https://twitter.com/puddingviz">
-        <IconCircle
-          name="twitter"
-          fill="var(--gray)"
-          stroke="none"
-          strokeWidth="0"
-        />
+        <IconCircle name="twitter" fill="var(--gray)" stroke="none" strokeWidth="0" />
       </a>
     </div>
   </div>
@@ -41,9 +30,8 @@
 </section>
 
 <style>
-  #IG-details-wrapper {
-    //max-width: 60rem;
-    margin: 0 auto 0.5rem auto;
+  section {
+    padding: 0 1em;
   }
 
   .description {
@@ -66,20 +54,23 @@
     flex-direction: row;
   }
 
-  button {
-    border: 1px solid var(--gray);
-    color: var(--off-white);
+  a.btn {
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--border-radius);
     margin: 0 0.75rem 0 0;
     padding: 1rem;
     width: 12.25rem;
     height: 3.25rem;
-    color: var(--gray-dark);
+    color: var(--color-gray-600);
+    text-decoration: none;
+    text-align: center;
   }
 
-  button:hover {
-    background-color: var(--off-black);
-    color: var(--off-white);
-    border: 1px solid var(--off-black);
+  a.btn:hover {
+    background-color: var(--color-gray-900);
+    color: var(--color-white);
+    border: 1px solid var(--color-gray-900);
   }
 
   .social-wrapper {
@@ -92,18 +83,17 @@
   }
   .social-wrapper p {
     margin: 0;
-    color: var(--gray-dark);
+    color: var(--color-gray-600);
   }
 
   .directions {
     max-width: 60rem;
-    margin: 3rem auto 0 auto;
+    margin: 3rem auto 1rem auto;
     width: 100%;
     text-align: center;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--gray-light);
-    font-size: 0.75rem;
-    color: var(--gray-dark);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--color-gray-300);
+    color: var(--color-gray-600);
   }
 
   @media only screen and (max-width: 720px) {
@@ -119,7 +109,7 @@
       align-items: center;
     }
 
-    button {
+    .btn {
       margin: 0 0 0.5rem 0;
       width: 15rem;
     }

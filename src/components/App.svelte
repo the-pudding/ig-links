@@ -1,14 +1,8 @@
 <script>
-  import Meta from "./Meta.svelte";
-  import IGlinks from "./IGlinks.svelte";
-  import IGdetails from "./Details.svelte";
-  import Header from "./pudding/Header.svelte";
+  import Links from "$components/Links.svelte";
+  import Details from "$components/Details.svelte";
 </script>
 
-<Meta />
+<Details />
 
-<Header />
-
-<IGdetails />
-
-<IGlinks />
+<Links />
