@@ -5,8 +5,6 @@
   const v = Date.now();
   const url = `https://pudding.cool/assets/data/stories.json?v=${v}`;
 
-  let localURL;
-
   const links = [
     { name: "about", url: "https://pudding.cool/about" },
     { name: "facebook", url: "https://facebook.com/pudding.viz/" },
@@ -20,10 +18,6 @@
     { name: "newsletter", url: "http://eepurl.com/czym6f" },
     { name: "rss", url: "https://pudding.cool/feed/index.xml" },
   ];
-
-  onMount(() => {
-    localURL = window.location.href;
-  });
 
   const fetchData = (async () => {
     const response = await fetch(url);
@@ -41,7 +35,8 @@
           <a href="{url}">
             <img
               src="https://pudding.cool/common/assets/thumbnails/640/{image}.jpg"
-              alt="{hed}" />
+              alt="{hed}"
+            />
             <span>{hed}</span>
           </a>
         </div>
@@ -55,8 +50,8 @@
     </div>
     <p>
       <a href="https://pudding.cool">The Pudding</a>
-      is a digital publication that explains ideas debated in culture with
-      visual essays.
+      is a digital publication that explains ideas debated in culture with visual
+      essays.
     </p>
   </section>
 
