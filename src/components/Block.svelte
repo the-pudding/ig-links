@@ -25,7 +25,7 @@
 
 <div class="block">
   {#if url}
-    <a href={url} on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible}>
+    <a class="wrapper" href={url} on:mouseenter|self={toggleVisible} on:mouseleave={toggleVisible}>
       <Image classes="image" src="assets/images/{id}.jpg" alt="instagram" />
       {#if visible}
         <p transition:fly={{ y: w, duration: 250 }} class="hed">
@@ -34,7 +34,9 @@
       {/if}
     </a>
   {:else}
-    <Image classes="image" src="assets/images/{id}.jpg" alt="instagram" />
+    <div class="wrapper">
+      <Image classes="image" src="assets/images/{id}.jpg" alt="instagram" />
+    </div>
   {/if}
 
   <div class="link-wrapper">
@@ -96,7 +98,7 @@
     width: calc(33% - 1rem);
   }
 
-  .block a {
+  .block .wrapper {
     display: block;
     aspect-ratio: 1;
     overflow: hidden;
