@@ -7,5 +7,9 @@
   import App from "$components/App.svelte";
 </script>
 
-<Meta />
+<Meta
+  title="The Pudding's Instagram Links"
+  description="A collection of links from The Pudding's Instagram posts"
+  url="https://pudding.cool/projects/ig-links"
+/>
 <App />
