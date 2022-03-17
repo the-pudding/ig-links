@@ -109,7 +109,7 @@
       align-items: center;
     }
 
-    .btn {
+    a.btn {
       margin: 0 0 0.5rem 0;
       width: 15rem;
     }
