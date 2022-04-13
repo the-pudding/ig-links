@@ -105,6 +105,20 @@
     position: relative;
   }
 
+  @supports not (aspect-ratio: 1 / 1) {
+    .block .wrapper::before {
+      float: left;
+      padding-top: 100%;
+      content: "";
+    }
+
+    .block .wrapper::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
+
   :global(.image) {
     width: 100%;
     height: 100%;
@@ -124,6 +138,7 @@
     color: var(--color-white);
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: 1s ease-in-out;
   }
 
@@ -176,12 +191,16 @@
 
     .hed {
       font-size: 1.25rem;
+      display: none;
     }
   }
 
   @media only screen and (max-width: 400px) {
     .block {
-      width: calc(100% - 1rem);
+      width: 100%;
+    }
+    .hed {
+      display: none;
     }
   }
 </style>
