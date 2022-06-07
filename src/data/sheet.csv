@@ -1,7 +1,7 @@
 id,hed,url,instagram,tiktok,text1,url1,icon1,text2,url2,icon2,text3,url3,icon3
-tiktok-video,Vox + Pudding collaboration on TikTok music virality,https://www.youtube.com/watch?v=S1m-KgEpoow,TRUE,TRUE,Listen to the podcast,https://open.spotify.com/episode/1OknHyVWLaV5NfMH5yK7gt,headphones,,,,,,
-heat-records,"We’re tracking heat records in 400 U.S. cities, and you can look up your city.",https://pudding.cool/projects/heat-records/,TRUE,TRUE,Heat record map,https://pudding.cool/2022/03/weather-map/,link,,,,,,
-random,We found this cool study about randomness that we wanted to show you.,https://pudding.cool/2022/04/random/,TRUE,TRUE,Original study,https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005408,bar-chart,,,,,,
+tiktok-video,Vox + Pudding collaboration on TikTok music virality,https://www.youtube.com/watch?v=S1m-KgEpoow,TRUE,FALSE,Listen to the podcast,https://open.spotify.com/episode/1OknHyVWLaV5NfMH5yK7gt,headphones,,,,,,
+heat-records,"We’re tracking heat records in 400 U.S. cities, and you can look up your city.",https://pudding.cool/projects/heat-records/,TRUE,FALSE,Heat record map,https://pudding.cool/2022/03/weather-map/,link,,,,,,
+random,We found this cool study about randomness that we wanted to show you.,https://pudding.cool/2022/04/random/,TRUE,FALSE,Original study,https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005408,bar-chart,,,,,,
 banknotes,Who’s in Your Wallet?,https://pudding.cool/2022/04/banknotes/,TRUE,FALSE,,,,,,,,,
 engagement-hire,We're Hiring a Part-Time Audience Engagement Manager,https://pudding.cool/career/audience-engagement-manager/,TRUE,FALSE,About Us,https://pudding.cool/about/,info,FAQ,https://pudding.cool/faq/,info,,,
 cough,"Chalamet Coughs, Dune Wins: Predicting Best Picture Winners Using Coughs and Sneezes",https://journal-doi.org/10.731/pcbi.1007742/,TRUE,FALSE,,,,,,,,,

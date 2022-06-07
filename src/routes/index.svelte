@@ -8,8 +8,8 @@
 </script>
 
 <Meta
-  title="The Pudding's Instagram Links"
-  description="A collection of links from The Pudding's Instagram posts"
-  url="https://pudding.cool/projects/ig-links"
+  title="The Pudding's Social Media Links"
+  description="A collection of links from The Pudding's social media posts"
+  url="https://pudding.cool/projects/social-media-links"
 />
 <App />
