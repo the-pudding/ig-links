@@ -8,9 +8,9 @@
   let platformName;
 
   if (browser) {
-    platformName = $page.url.search.split("?")[1];
+    platformName = $page.url.search.split("?")[1] || "instagram";
   }
-  let filteredSheet = sheet.filter(d => d[platformName] == "TRUE")
+  let filteredSheet = sheet.filter((d) => d[platformName] == "TRUE");
 </script>
 
 <section>
