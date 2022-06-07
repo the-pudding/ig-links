@@ -35,7 +35,7 @@
     transform-origin: 50% 50%;
   }
 
-  .round-svg {
+  :global(.round-svg) {
     border: 1px solid var(--color-gray-400);
     fill: var(--color-gray-400);
     height: 3rem;
@@ -47,12 +47,12 @@
     margin-left: 0.5rem;
   }
 
-  .round-svg:hover {
+  :global(.round-svg:hover) {
     background-color: var(--color-gray-900);
     border: 1px solid var(--color-gray-900);
   }
 
-  .round-svg:hover svg {
+  :global(.round-svg:hover svg) {
     fill: var(--color-white);
   }
 </style>

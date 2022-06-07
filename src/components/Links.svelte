@@ -2,17 +2,26 @@
   import { fly } from "svelte/transition";
   import sheet from "$data/sheet.csv";
   import Block from "$components/Block.svelte";
+  import { browser } from "$app/env";
+  import { page } from "$app/stores";
+
+  let platformName;
+
+  if (browser) {
+    platformName = $page.url.search.split("?")[1];
+  }
+  let filteredSheet = sheet.filter(d => d[platformName] == "TRUE")
 </script>
 
 <section>
-  {#each sheet as data}
+  {#each filteredSheet as data}
     <Block {...data} />
   {/each}
 </section>
 
 <style>
   section {
-    max-width: 60rem;
+    max-width: 50rem;
     margin: 0 auto;
     padding: 0 1em;
     display: flex;
