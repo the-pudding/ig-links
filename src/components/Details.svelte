@@ -1,5 +1,16 @@
 <script>
   import IconCircle from "$components/helpers/IconCircle.svelte";
+  import tiktokLogo from "$svg/tiktok.svg";
+  import instagramLogo from "$svg/instagram.svg";
+  import { browser } from "$app/env";
+  import { page } from "$app/stores";
+
+  let platformName;
+
+  if (browser) {
+    platformName = $page.url.search.split("?")[1];
+  }
+  console.log(platformName)
 </script>
 
 <section>
@@ -24,6 +35,16 @@
       <a href="https://twitter.com/puddingviz">
         <IconCircle name="twitter" fill="var(--gray)" stroke="none" strokeWidth="0" />
       </a>
+      {#if platformName == "instagram"}
+        <a href="https://www.tiktok.com/@the_pudding">
+          <div class="round-svg">{@html tiktokLogo}</div>
+        </a>
+      {/if}
+      {#if platformName == "tiktok"}
+        <a href="https://www.instagram.com/the.pudding/?hl=en">
+          <div class="round-svg">{@html instagramLogo}</div>
+        </a>
+      {/if}
     </div>
   </div>
   <p class="directions">Tap on an image to see the full interactive project</p>
@@ -40,6 +61,10 @@
     max-width: 35rem;
     margin: 0 auto;
     font-size: 1.5em;
+  }
+
+  :global(.round-svg:hover svg path) {
+    fill: var(--color-white);
   }
 
   .ctas {
@@ -78,7 +103,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 15rem;
+    width: 18rem;
     justify-content: space-between;
   }
   .social-wrapper p {
@@ -92,11 +117,10 @@
     width: 100%;
     text-align: center;
     padding: 0.5rem;
-    border-bottom: 1px solid var(--color-gray-300);
     color: var(--color-gray-600);
   }
 
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 750px) {
     .ctas {
       flex-direction: column;
       justify-content: center;
