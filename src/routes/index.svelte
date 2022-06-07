@@ -10,6 +10,6 @@
 <Meta
   title="The Pudding's Social Media Links"
   description="A collection of links from The Pudding's social media posts"
-  url="https://pudding.cool/projects/social-media-links"
+  url="https://pudding.cool/projects/ig-links"
 />
 <App />

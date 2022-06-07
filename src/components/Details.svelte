@@ -10,7 +10,6 @@
   if (browser) {
     platformName = $page.url.search.split("?")[1];
   }
-  console.log(platformName)
 </script>
 
 <section>
