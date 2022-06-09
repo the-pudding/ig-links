@@ -1,5 +1,4 @@
 <script>
-  import { page } from "$app/stores";
   import { browser } from "$app/env";
 
   import Links from "$components/Links.svelte";
@@ -8,10 +7,8 @@
   let platformName = "instagram";
 
   if (browser) {
-    const p = $page.url.search;
-    console.log(p);
+    const p = window.location.search;
     platformName = p.split("?")[1] || "instagram";
-    console.log({ platformName });
   }
 </script>
 
