@@ -10,6 +10,7 @@
   if (browser) {
     const p = $page.url.search;
     platformName = p.split("?")[1] || "instagram";
+    console.log({ platformName });
   }
 </script>
 
