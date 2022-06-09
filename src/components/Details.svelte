@@ -2,14 +2,8 @@
   import IconCircle from "$components/helpers/IconCircle.svelte";
   import tiktokLogo from "$svg/tiktok.svg";
   import instagramLogo from "$svg/instagram.svg";
-  import { browser } from "$app/env";
-  import { page } from "$app/stores";
 
-  let platformName;
-
-  if (browser) {
-    platformName = $page.url.search.split("?")[1];
-  }
+  export let platformName;
 </script>
 
 <section>
@@ -34,14 +28,13 @@
       <a href="https://twitter.com/puddingviz">
         <IconCircle name="twitter" fill="var(--gray)" stroke="none" strokeWidth="0" />
       </a>
-      {#if platformName == "instagram"}
-        <a href="https://www.tiktok.com/@the_pudding">
-          <div class="round-svg">{@html tiktokLogo}</div>
-        </a>
-      {/if}
       {#if platformName == "tiktok"}
         <a href="https://www.instagram.com/the.pudding/?hl=en">
           <div class="round-svg">{@html instagramLogo}</div>
+        </a>
+      {:else}
+        <a href="https://www.tiktok.com/@the_pudding">
+          <div class="round-svg">{@html tiktokLogo}</div>
         </a>
       {/if}
     </div>

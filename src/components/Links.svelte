@@ -2,15 +2,9 @@
   import { fly } from "svelte/transition";
   import sheet from "$data/sheet.csv";
   import Block from "$components/Block.svelte";
-  import { browser } from "$app/env";
-  import { page } from "$app/stores";
 
-  let platformName;
+  export let platformName;
 
-  if (browser) {
-    const p = $page.url.search;
-    platformName = p.split("?")[1] || "instagram";
-  }
   const filteredSheet = sheet.filter((d) => d[platformName] == "TRUE");
 </script>
 
