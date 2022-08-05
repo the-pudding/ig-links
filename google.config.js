@@ -6,6 +6,6 @@ export default [
 	{
 		"id": "1NdEkmj6XzyG67L6b74t7sdLxos5iDYH40kdBHWGGfZE",
 		"gid": "0",
-		"filepath": "src/data/sheet.csv"
+		"filepath": "static/assets/data.csv"
 	}
 ]
