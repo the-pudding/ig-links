@@ -8,7 +8,7 @@
 
   if (browser) {
     const p = window.location.search;
-    platformName = p.split("?")[1] || "instagram";
+    platformName = p.split("?")[1] === "tiktok" ? "tiktok" : "instagram";
   }
 </script>
 
