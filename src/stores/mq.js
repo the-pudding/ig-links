@@ -1,16 +1,16 @@
-import { browser } from '$app/env';
+import { browser } from "$app/environment";
 import { readable } from "svelte/store";
 
 const queries = {
-	"sm": "(min-width: 640px)",
-	"md": "(min-width: 768px)",
-	"lg": "(min-width: 1024px)",
-	"xl": "(min-width: 1280px)",
-	"reducedMotion": "(prefers-reduced-motion: reduce)"
+	sm: "(min-width: 640px)",
+	md: "(min-width: 768px)",
+	lg: "(min-width: 1024px)",
+	xl: "(min-width: 1280px)",
+	reducedMotion: "(prefers-reduced-motion: reduce)"
 };
 
 function calculateMedia(mqls) {
-	const media = { classNames: '' };
+	const media = { classNames: "" };
 	const mediaClasses = [];
 	for (let name in mqls) {
 		media[name] = mqls[name].matches;
