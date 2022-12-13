@@ -27,7 +27,7 @@
 
 <div class="block">
   {#if url}
-    <a class="wrapper" href={url}>
+    <a class="wrapper" href={url} target="_blank">
       <Image classes="image" src="assets/images/{id}.jpg" alt="instagram" />
     </a>
   {:else}
@@ -38,7 +38,7 @@
 
   <div class="text-wrapper">
     {#if url}
-      <a href={url}>
+      <a href={url} target="_blank">
         <p class="hed">{hed}</p>
       </a>
     {:else}
@@ -48,7 +48,7 @@
       <div class="link-wrapper">
         <ul>
           {#if text1}
-            <a href={url1}>
+            <a href={url1} target="_blank">
               <li>
                 <span
                   ><Icon
@@ -62,7 +62,7 @@
             </a>
           {/if}
           {#if text2}
-            <a href={url2}>
+            <a href={url2} target="_blank">
               <li>
                 <span
                   ><Icon
@@ -76,7 +76,7 @@
             </a>
           {/if}
           {#if text3}
-            <a href={url3}>
+            <a href={url3} target="_blank">
               <li>
                 <span
                   ><Icon
