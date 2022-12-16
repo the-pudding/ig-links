@@ -2,6 +2,7 @@
 	import IconCircle from "$components/helpers/IconCircle.svelte";
 	import tiktokLogo from "$svg/tiktok.svg";
 	import instagramLogo from "$svg/instagram.svg";
+	import mastodonLogo from "$svg/mastodon.svg";
 
 	export let platformName;
 </script>
@@ -49,6 +50,9 @@
 					<div class="round-svg">{@html tiktokLogo}</div>
 				</a>
 			{/if}
+			<a href="https://vis.social/@thepudding">
+				<div class="round-svg">{@html mastodonLogo}</div>
+			</a>
 		</div>
 	</div>
 	<p class="directions">Tap on an image to see the full interactive project</p>
@@ -107,7 +111,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		width: 18rem;
+		width: 22rem;
 		justify-content: space-between;
 	}
 	.social-wrapper p {
