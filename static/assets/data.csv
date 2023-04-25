@@ -1,4 +1,5 @@
 id,hed,url,instagram,tiktok,text1,url1,icon1,text2,url2,icon2,text3,url3,icon3
+location-game,Where in the USA is This?,https://pudding.cool/games/where/,TRUE,FALSE,,,,,,,,,
 pockets-vid,Women's Pockets are Inferior,https://pudding.cool/2018/08/pockets/,TRUE,TRUE,Get the data,https://github.com/the-pudding/data/tree/master/pockets,bar-chart,Get the poster,https://thepudding.threadless.com/designs/pockets-poster,shopping-cart,,,
 same-name,A Map of Places in the US with the Same Name,https://pudding.cool/2023/03/same-name/,TRUE,FALSE,Interactive explainer,https://pudding.cool/2023/03/same-name/method/,link,Improve the data,https://docs.google.com/spreadsheets/u/1/d/1cHtvcuxvxI6Y2hA5Xa2wg8AW0SZ7ZYG5H5x7H4jGLdk/edit#gid=0,bar-chart,,,
 dame-unexpected,The Greatest Unexpected NBA Performances,https://www.youtube.com/watch?v=jV49bDzkQhY,TRUE,FALSE,,,,,,,,,
