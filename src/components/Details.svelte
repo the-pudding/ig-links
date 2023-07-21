@@ -3,6 +3,7 @@
 	import tiktokLogo from "$svg/tiktok.svg";
 	import instagramLogo from "$svg/instagram.svg";
 	import mastodonLogo from "$svg/mastodon.svg";
+	import threadsLogo from "$svg/threads.svg";
 
 	export let platformName;
 </script>
@@ -50,6 +51,9 @@
 					<div class="round-svg">{@html tiktokLogo}</div>
 				</a>
 			{/if}
+			<a href="https://www.threads.net/@the.pudding">
+				<div class="round-svg">{@html threadsLogo}</div>
+			</a>
 			<a href="https://vis.social/@thepudding">
 				<div class="round-svg">{@html mastodonLogo}</div>
 			</a>
