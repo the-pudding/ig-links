@@ -17,7 +17,7 @@
 		<div class="button-wrapper">
 			<a
 				class="btn"
-				href="https://cool.us11.list-manage.com/subscribe?u=c70d3c0e372cde433143ffeab&id=9af100ac0f"
+				href="https://thepuddingmail.substack.com/"
 				>Join our newsletter</a
 			>
 			<a class="btn" href="https://www.patreon.com/thepudding"
