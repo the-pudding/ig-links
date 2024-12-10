@@ -1,4 +1,5 @@
 <script>
+	import { base } from "$app/paths";
 	import IconCircle from "$components/helpers/IconCircle.svelte";
 	import tiktokLogo from "$svg/tiktok.svg";
 	import instagramLogo from "$svg/instagram.svg";
@@ -15,47 +16,38 @@
 	</p>
 	<div class="ctas">
 		<div class="button-wrapper">
-			<a
-				class="btn"
-				href="https://pudding.cool/subscribe"
-				>Join our newsletter</a
-			>
-			<a class="btn" href="https://www.patreon.com/thepudding"
-				>Support us on Patreon</a
-			>
+			<a href="https://pudding.cool/subscribe">
+				<img aria-label="subscribe" src="{base}/assets/subscribe@2x.png" alt="subscribe" />
+			</a>
+			<a href="https://www.patreon.com/thepudding">
+				<img aria-label="donate" src="{base}/assets/donate@2x.png" alt="donate" />
+			</a>
 		</div>
 		<div class="social-wrapper">
-			<p>Find us on social</p>
-			<a href="https://www.facebook.com/pudding.viz/">
-				<IconCircle
-					name="facebook"
-					fill="var(--gray)"
-					stroke="none"
-					strokeWidth="0"
-				/>
+			<a href="https://bsky.app/profile/puddingviz.bsky.social">
+				<img aria-label="bluesky" src="{base}/assets/bluesky@2x.png" alt="bluesky" />
 			</a>
-			<a href="https://twitter.com/puddingviz">
-				<IconCircle
-					name="twitter"
-					fill="var(--gray)"
-					stroke="none"
-					strokeWidth="0"
-				/>
+			<a href="https://www.facebook.com/pudding.viz/">
+				<img aria-label="facebook" src="{base}/assets/facebook@2x.png" alt="facebook" />
 			</a>
 			{#if platformName == "tiktok"}
 				<a href="https://www.instagram.com/the.pudding/?hl=en">
-					<div class="round-svg">{@html instagramLogo}</div>
-				</a>
-			{:else}
-				<a href="https://www.tiktok.com/@the_pudding">
-					<div class="round-svg">{@html tiktokLogo}</div>
+					<img aria-label="instagram" src="{base}/assets/instagram@2x.png" alt="instagram" />
 				</a>
 			{/if}
 			<a href="https://www.threads.net/@the.pudding">
-				<div class="round-svg">{@html threadsLogo}</div>
+				<img aria-label="threads" src="{base}/assets/threads@2x.png" alt="threads" />
 			</a>
-			<a href="https://vis.social/@thepudding">
-				<div class="round-svg">{@html mastodonLogo}</div>
+			{#if platformName == "instagram"}
+				<a href="https://www.tiktok.com/@the_pudding">
+					<img aria-label="tiktok" src="{base}/assets/tiktok@2x.png" alt="tiktok" />
+				</a>
+			{/if}
+			<a href="https://twitter.com/puddingviz">
+				<img aria-label="twitter" src="{base}/assets/twitter_x@2x.png" alt="twitter" />
+			</a>
+			<a href="https://www.youtube.com/@thepudding">
+				<img aria-label="youtube" src="{base}/assets/youtube@2x.png" alt="youtube" />
 			</a>
 		</div>
 	</div>
@@ -84,30 +76,23 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		max-width: 45rem;
 	}
 
 	.button-wrapper {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
+		width: 66%;
 	}
 
-	a.btn {
-		background-color: var(--color-gray-50);
-		border: 1px solid var(--color-gray-300);
-		border-radius: var(--border-radius);
-		margin: 0 0.75rem 0 0;
-		padding: 1rem;
-		width: 12.25rem;
-		height: 3.25rem;
-		color: var(--color-gray-600);
-		text-decoration: none;
-		text-align: center;
+	.button-wrapper a img {
+		max-width: 10rem;
+		transition: transform 0.25s ease-in-out;
 	}
 
-	a.btn:hover {
-		background-color: var(--color-gray-900);
-		color: var(--color-white);
-		border: 1px solid var(--color-gray-900);
+	.button-wrapper a:hover img {
+		transform: rotate(var(--left-tilt)) scale(1.05);
 	}
 
 	.social-wrapper {
@@ -118,9 +103,13 @@
 		width: 22rem;
 		justify-content: space-between;
 	}
-	.social-wrapper p {
-		margin: 0;
-		color: var(--color-gray-600);
+	.social-wrapper a img {
+		width: 3rem;
+		transition: transform 0.25s ease-in-out;
+	}
+
+	.social-wrapper a:hover img {
+		transform: rotate(var(--left-tilt)) scale(1.05);
 	}
 
 	.directions {
