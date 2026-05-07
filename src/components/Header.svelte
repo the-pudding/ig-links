@@ -1,5 +1,5 @@
 <script>
-  import wordmark from "$svg/wordmark-sticker.svg";
+  import wordmark from "$svg/wordmark_script_stacked_sticker.svg";
 </script>
 
 <header>
