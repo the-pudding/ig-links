@@ -24,7 +24,7 @@
 			</a>
 		</div>
 		<div class="social-wrapper">
-			<a href="https://bsky.app/profile/puddingviz.bsky.social">
+			<a href="https://bsky.app/profile/pudding.cool">
 				<img aria-label="bluesky" src="{base}/assets/bluesky@2x.png" alt="bluesky" />
 			</a>
 			<a href="https://www.facebook.com/pudding.viz/">
